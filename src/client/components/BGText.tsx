@@ -20,7 +20,7 @@ export default function BGText({ children, texts }: Props) {
             className="absolute z-20"
             style={{
               rotate: `${Math.random() * 10 - 5}deg`,
-              fontSize: "clamp(1rem, 4vw, 4rem)",
+              fontSize: "clamp(1rem, 8vw, 4rem)",
               top: top,
               left: left
             }}

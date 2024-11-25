@@ -158,17 +158,18 @@ export default function Page() {
           </div>
           {/* Тут сделаю пятую секцию "контакты" */}
           <BGText texts={[{ text: "LOVE", top: "70vh", left: "12vw" }]}>
-            <div className="flex items-center justify-center min-h-screen flex-col gap-5">
+            <div className="flex items-center justify-center min-h-screen flex-col gap-5 px-2">
               <GlitchText font={font} text="погнали" style={{ fontSize: "clamp(1rem, 15vw, 7rem)" }} />
               <div className="flex items-center justify-center gap-5 flex-wrap">
                 <MagneticButton>
                   <a href="https://t.me/murrave" target="_blank" className="rounded-full">
                     <svg
+                      style={{ maxWidth: "100px", maxHeight: "100px" }}
                       xmlns="http://www.w3.org/2000/svg"
                       x="0px"
                       y="0px"
-                      width="100"
-                      height="100"
+                      width="20vw"
+                      height="20vw"
                       viewBox="0 0 48 48"
                     >
                       <path fill="#29b6f6" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path>
@@ -190,11 +191,12 @@ export default function Page() {
                 <MagneticButton>
                   <a href="https://instagram.com/murravee" target="_blank" className="rounded-full">
                     <svg
+                      style={{ maxWidth: "100px", maxHeight: "100px" }}
                       xmlns="http://www.w3.org/2000/svg"
                       x="0px"
                       y="0px"
-                      width="100"
-                      height="100"
+                      width="20vw"
+                      height="20vw"
                       viewBox="0 0 48 48"
                     >
                       <path
@@ -292,11 +294,12 @@ export default function Page() {
                 <MagneticButton>
                   <a href="https://vk.com/murrave" target="_blank" className="rounded-full">
                     <svg
+                      style={{ maxWidth: "100px", maxHeight: "100px" }}
                       xmlns="http://www.w3.org/2000/svg"
                       x="0px"
                       y="0px"
-                      width="100"
-                      height="100"
+                      width="20vw"
+                      height="20vw"
                       viewBox="0 0 48 48"
                     >
                       <path fill="#1976d2" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"></path>
@@ -310,11 +313,12 @@ export default function Page() {
                 <MagneticButton>
                   <a href="https://www.tiktok.com/@murravee" target="_blank" className="rounded-full">
                     <svg
+                      style={{ maxWidth: "100px", maxHeight: "100px" }}
                       xmlns="http://www.w3.org/2000/svg"
                       x="0px"
                       y="0px"
-                      width="100"
-                      height="100"
+                      width="20vw"
+                      height="20vw"
                       viewBox="0 0 48 48"
                     >
                       <path
