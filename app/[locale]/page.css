@@ -1,0 +1,17 @@
+.rave-text {
+    font-family: Arial, sans-serif;
+    font-size: 100px;
+    color: transparent;
+    /* Делает текст прозрачным */
+    text-transform: uppercase;
+    /* -webkit-text-stroke: 2px white; */
+    /* Белая обводка */
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+@media (max-width: 350px) {
+    .rave-text {
+        font-size: 75px;
+    }
+}

@@ -2,20 +2,156 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  cursor: url('/static/cursor.cur'), auto !important;
+}
+
+body {
+  overflow: hidden;
+  overflow-x: hidden;
+}
+
+/* Скрытие полосы прокрутки для всех браузеров */
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE и Edge */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --foreground-rgb: 0 0 0;
+  --background-start-rgb: 214 219 220;
+  --background-end-rgb: 255 255 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground-rgb: 255 255 255;
+    --background-start-rgb: 0 0 0;
+    --background-end-rgb: 0 0 0;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    --primary: 0 0% 15% 1;
+    --primary-foreground: 210 20% 98%;
+    --secondary: 220 14.3% 95.9%;
+    --secondary-foreground: 220.9 39.3% 11%;
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    --accent: 220 14.3% 95.9%;
+    --accent-foreground: 220.9 39.3% 11%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 20% 98%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 71.4% 4.1%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    /* Черный с глитчем */
+    --foreground: 0 0% 95%;
+    /* Белый “горящий” */
+    --card: 270 100% 20%;
+    /* Темно-фиолетовый фон */
+    --card-foreground: 330 100% 60%;
+    /* Розовый кислотный текст */
+    --popover: 270 100% 20%;
+    /* Темно-фиолетовый фон поповера */
+    --popover-foreground: 330 100% 60%;
+    /* Розовый кислотный текст поповера */
+    --primary: 330 100% 60%;
+    /* Розовый кислотный */
+    --primary-foreground: 60 100% 60%;
+    /* Желтый неоновый */
+    --secondary: 160 100% 50%;
+    /* Зеленый кислотный */
+    --secondary-foreground: 270 100% 50%;
+    /* Фиолетовый яркий */
+    --muted: 0 0% 5%;
+    /* Черный с глитчем */
+    --muted-foreground: 180 100% 50%;
+    /* Голубой неоновый */
+    --accent: 330 100% 60%;
+    /* Розовый кислотный */
+    --accent-foreground: 60 100% 60%;
+    /* Желтый неоновый */
+    --destructive: 330 100% 60%;
+    /* Розовый кислотный для разрушительных элементов */
+    --destructive-foreground: 0 0% 95%;
+    /* Белый для текста разрушительного цвета */
+    --border: 270 100% 50%;
+    /* Фиолетовый для границ */
+    --input: 270 100% 20%;
+    /* Темно-фиолетовый для фона ввода */
+    --ring: 180 100% 50%;
+    /* Голубой неоновый для обводки */
+    --chart-1: 330 100% 60%;
+    /* Розовый кислотный для первого графика */
+    --chart-2: 60 100% 60%;
+    /* Желтый неоновый для второго графика */
+    --chart-3: 160 100% 50%;
+    /* Зеленый кислотный для третьего графика */
+    --chart-4: 270 100% 50%;
+    /* Фиолетовый для четвертого графика */
+    --chart-5: 180 100% 50%;
+    /* Голубой неоновый для пятого графика */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply dark bg-background text-foreground;
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  /* Размер частиц */
+  height: 2px;
+  border-radius: 50%;
+  background: hsl(var(--primary));
+  /* Легкий белый оттенок */
+  pointer-events: none;
+  animation: particle-fade 1s forwards ease-out;
+}
+
+@keyframes particle-fade {
+  0% {
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
 }
